@@ -1,7 +1,8 @@
+#!/bin/bash
 # adjust these variables
-export SSH_KEY=DevOps
-export CLUSTER_REGION=us-east-1
-export RESOURCE_PREFIX=jyarbrough
+export SSH_KEY=<your ssh aws key name>
+export CLUSTER_REGION=<example us-east-1>
+export RESOURCE_PREFIX=<example your last name>
 
 # leave these values
 export AWS_HOST_NAME="$RESOURCE_PREFIX"-dt-kube-demo-bastion

@@ -1,8 +1,8 @@
 #!/bin/bash
 # adjust these variables
-export SSH_KEY=DevOps
-export CLUSTER_REGION=us-east-1
-export RESOURCE_PREFIX=jyarbrough
+export SSH_KEY=<your ssh aws key name>
+export CLUSTER_REGION=<example us-east-1>
+export RESOURCE_PREFIX=<example your last name>
 export AMI_ID=ami-07b4156579ea1d7ba
 
 # leave these values as they are
