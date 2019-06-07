@@ -1,0 +1,43 @@
+stage('Event-Post-Service-Deployment') { //Dynatrace POST action for deployment Event - requires HTTP Request Plugin
+	steps { 
+		script { 
+			def body = """{"eventType": "CUSTOM_DEPLOYMENT", 
+			"attachRules": { 
+				"tagRule" : { 
+				"meTypes" : "SERVICE", 
+				"tags" : [ 
+					{
+					"context" : "CONTEXTLESS",
+					"key" : "dt-kube-demo-service",
+					"value" : "front-end"
+					}
+					] 
+				} 
+			}, 
+			"deploymentName":"${JOB_NAME} - ${BUILD_NUMBER} Staging (http)", 
+			"deploymentVersion":"${params.frontendversion}", 
+			"deploymentProject":"pipeline", 
+			"remediationAction":"https://ansible.pcjeffint.com/#/templates/job_template/7", 
+			"ciBackLink":"${BUILD_URL}", 
+			"source":"Jenkins", 
+			"customProperties":{ 
+				"Jenkins Build Number": "${BUILD_ID}", 
+				"Environment": "Staging", 
+				"Job URL": "${JOB_URL}", 
+				"Build URL": "${BUILD_URL}" 
+				} 
+			}""" 
+		//send json payload - create authentication credential in Jenkins
+		httpRequest acceptType: 'APPLICATION_JSON', 
+		authentication: 'b06659fd-2cfe-48c6-80c6-a88f22cb1336', 
+		contentType: 'APPLICATION_JSON', 
+		customHeaders: [[maskValue: true, name: 'Authorization', 
+		value: "Api-Token ${DT_API_TOKEN}"]], 
+		httpMode: 'POST', 
+		ignoreSslErrors: true, 
+		requestBody: body, 
+		responseHandle: 'NONE', 
+		url: "${DT_TENANT_URL}/api/v1/events/" 
+		} 
+	} 
+} 
