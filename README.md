@@ -72,8 +72,8 @@ On your laptop, run these commands to create the bastion host with security grou
 export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-west-2>
 export RESOURCE_PREFIX=<example your last name>
-# NOTE: The AMI ID may vary my region. This is the AMI for us-west-2 
-export AMI_ID=ami-08692d171e3cf02d6
+# NOTE: The AMI ID may vary my region. This is the AMI for us-east-1 
+export AMI_ID=ami-07b4156579ea1d7ba
 
 # leave these values as they are
 export AWS_HOST_NAME="$RESOURCE_PREFIX"-dt-kube-demo-bastion
