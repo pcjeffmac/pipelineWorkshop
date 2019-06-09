@@ -55,6 +55,12 @@ See [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-cha
 
 Download Scripts,
 
+Edit these lines in ```bastion.sh```
+
+```export SSH_KEY=<your ssh aws key name>
+export CLUSTER_REGION=<example us-east-1>
+export RESOURCE_PREFIX=<example your last name>```
+
 We are going to execute the prepared script to create the bastion.
 ```
 ./bastion.sh
@@ -123,5 +129,12 @@ cd setup-infra
 # Delete the bastion
 
 After the completion of the workshop you can delete the EC instance.
+
+Edit these lines,
+```
+export SSH_KEY=<your ssh aws key name>
+export CLUSTER_REGION=<example us-east-1>
+export RESOURCE_PREFIX=<example your last name>
+```
 
 Simply run ```./removebastion.sh```
