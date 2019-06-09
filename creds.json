@@ -1,0 +1,22 @@
+{
+    "deployment": "eks",
+    "jenkinsPort": "24711",
+    "jenkinsUser": "admin",
+    "jenkinsPassword": "AiTx4u8VyUV8tCKk",
+    "dynatraceTenant": "",
+    "dynatraceApiToken": "",
+    "dynatracePaaSToken": "",
+    "dynatraceHostName": ".live.dynatrace.com",
+    "githubUserName": "",
+    "githubPersonalAccessToken": "",
+    "githubUserEmail": "",
+    "githubOrg": "",
+    "resourcePrefix": "",
+    "registry": "robjahn",
+    "registryToken": "",
+    "azureSubscription": "AZURE_SUBSCRIPTION_PLACEHOLDER",
+    "azureLocation": "AZURE_LOCATION_PLACEHOLDER",
+    "gkeProject": "GKE_PROJECT_PLACEHOLDER",
+    "clusterZone": "CLUSTER_ZONE_PLACEHOLDER",
+    "clusterRegion": "us-east-1"
+}
