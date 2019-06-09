@@ -13,7 +13,7 @@ Below are instructions for using the AWS CLI on your workstation to provison an 
 Make sure you have the AWS CLI installed on your workstation.
 See [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 
-Run this command to configure the cli 
+Run this command to configure the AWS CLI 
 ```
 aws configure
 ```
@@ -45,7 +45,7 @@ Output should be similar to this,
 
 Now you are ready to provision the bastion host in AWS.
 
-# Provision bastion host using CLI
+# Provision bastion host using AWS CLI
 
 These instructions assume you have an AWS account and have the AWS CLI installed and configured locally from the above step.
 
@@ -99,13 +99,13 @@ REFERENCE: [aws docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Access
 
 ## 2. Initialize AWS CLI on the bastion
 
-Within the bastion host, run these commands to install the aws CLI 
+Within the bastion host, run these commands to install the AWS CLI 
 ```
 sudo apt update
 sudo apt install awscli --yes
 ```
 
-Run this command to configure the cli 
+Run this command to configure the AWS CLI 
 ```
 aws configure
 ```
