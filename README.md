@@ -1,12 +1,13 @@
 # pipelineWorkshop
 
 These files are used as helper scripts to ease the creation of the bastion for the workshop.
+The focus of the workshop will be on AWS-EKS, but this can also be done on Azure.
 
 Below are instructions for using the AWS CLI on your workstation to provison an ubuntu virtual machine on AWS (EC2). This bastion host will then be used to run the scripts to provision the cluster and application setup.
 
 # Initialize aws CLI on your workstation
 
-will will need to make sure you have the CLI installed on your workstation.
+Make sure you have the AWS CLI installed on your workstation.
 See [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 
 Run this command to configure the cli 
@@ -22,7 +23,24 @@ At the prompt,
 
 See [this article](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/) for For help access keys
 
-When complete, run this command ```aws iam list-access-keys``` to see verify your configuration.
+When complete, run this command ```aws iam list-access-keys``` to verify your configuration.
+
+Output should be similar to this,
+
+```
+{
+    "AccessKeyMetadata": [
+        {
+            "UserName": "_CLI",
+            "Status": "Active",
+            "CreateDate": "2019-04-18T18:22:31Z",
+            "AccessKeyId": ""
+        }
+    ]
+}
+```
+
+Now you are ready to provision the bastion host in AWS.
 
 # Provision bastion host using CLI
 
@@ -44,54 +62,19 @@ This script will create a (Ubuntu Server 16.04 LTS (HVM), SSD Volume Type) EC2 h
 
 We may need to get the correct AMI for your region.
 
+## 1. Run Script to provision resources 
 
-## 1. Run CLI to provision resources
+On your laptop, run this commands to create the bastion host with security group that allows ssh access.
+The script needs execute permissions ```chmod +x bastion.sh```
 
-On your laptop, run these commands to create the bastion host with security group that allows ssh access
-
+Now execute the script.
 ```
-# adjust these variables
-export SSH_KEY=<your ssh aws key name>
-export CLUSTER_REGION=<example us-west-2>
-export RESOURCE_PREFIX=<example your last name>
-# NOTE: The AMI ID may vary my region. This is the AMI for us-west-2 
-export AMI_ID=ami-08692d171e3cf02d6
-
-# leave these values as they are
-export AWS_HOST_NAME="$RESOURCE_PREFIX"-dt-kube-demo-bastion
-export AWS_SECURITY_GROUP_NAME="$RESOURCE_PREFIX"-dt-kube-demo-bastion-group
-
-# create-security-group
-aws ec2 create-security-group \
-  --group-name $AWS_SECURITY_GROUP_NAME \
-  --description "Used by dt-kube-demo bastion host"
-
-# get the new security-group id
-export AWS_SECURITY_GROUP_ID=$(aws ec2 describe-security-groups \
-  --filters "Name=group-name,Values=$AWS_SECURITY_GROUP_NAME" \
-  --query "SecurityGroups[0].GroupId" \
-  --output text)
-
-# update create-security-group with inbound rule
-aws ec2 authorize-security-group-ingress \
-  --group-id "$AWS_SECURITY_GROUP_ID" \
-  --protocol tcp \
-  --port 22 \
-  --cidr "0.0.0.0/0"
-
-# provision the host
-aws ec2 run-instances \
-  --image-id "$AMI_ID" \
-  --count 1 \
-  --security-group-ids "$AWS_SECURITY_GROUP_ID" \
-  --instance-type t2.micro \
-  --key-name $SSH_KEY  \
-  --associate-public-ip-address \
-  --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$AWS_HOST_NAME}]" \
-  --region $CLUSTER_REGION
+./bastion.sh
 ```
+Validate the bastion has been created in EC2 console.
 
-## 2. Proceed to 'Connect and Prepare to bastion host' section below
+<img src="images/ec2-image.png" width="300"/>
+
 
 # Connect and Prepare to bastion host 
 
