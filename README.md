@@ -86,7 +86,7 @@ Validate the bastion has been created in EC2 console.
 <img src="images/ec2-image.png" width="300"/>
 
 
-# Connect and Prepare to bastion host 
+# Connect and Prepare the bastion host 
 
 ## 1. SSH to the bastion host 
 
