@@ -63,7 +63,7 @@ export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
 ```
 
-We are going to execute the prepared script to create the bastion.
+Now we can execute the prepared script to create the bastion.
 ```
 ./bastion.sh
 ```
@@ -133,9 +133,10 @@ cd setup-infra
 After the completion of the workshop you can delete the EC instance.
 
 Edit these lines,
+```
 export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
+```
 
-
-Simply run ```./removebastion.sh```
+Then simply run ```./removebastion.sh``` to delete the EC2 instnace.
