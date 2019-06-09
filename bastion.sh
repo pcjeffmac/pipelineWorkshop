@@ -23,6 +23,7 @@ export AWS_SECURITY_GROUP_ID=$(aws ec2 describe-security-groups \
   --query "SecurityGroups[0].GroupId" \
   --output text)
 
+sleep 10
 # update create-security-group with inbound rule
 aws ec2 authorize-security-group-ingress \
   --group-id "$AWS_SECURITY_GROUP_ID" \
@@ -30,6 +31,7 @@ aws ec2 authorize-security-group-ingress \
   --port 22 \
   --cidr "0.0.0.0/0"
 
+sleep 10
 # provision the host
 aws ec2 run-instances \
   --image-id "$AMI_ID" \
