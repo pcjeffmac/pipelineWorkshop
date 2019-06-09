@@ -56,11 +56,10 @@ We are going to execute the prepared script to create the bastion.
 ```
 ./bastion.sh
 ```
-The script will run the same commands listed under the "Run CLI to provision resources" section.
 I have simply created this script to automate the process.
 This script will create a (Ubuntu Server 16.04 LTS (HVM), SSD Volume Type) EC2 host.
 
-We may need to get the correct AMI for your region.
+You may need to get the correct AMI for your region.
 
 ## 1. Run Script to provision resources 
 
