@@ -4,6 +4,7 @@ These files are used as helper scripts to ease the creation of the bastion for t
 The focus of the workshop will be on AWS-EKS, but this can also be done on Azure.
 
 I have also provided a cheetsheet for the necessary gitHub and Dynatrace credentils we will use for the workshop.
+```cred.json```
 
 Below are instructions for using the AWS CLI on your workstation to provison an ubuntu virtual machine on AWS (EC2). This bastion host will then be used to run the scripts to provision the cluster and application setup.
 
@@ -123,4 +124,4 @@ cd setup-infra
 
 After the completion of the workshop you can delete the EC instance.
 
-Simply run ```./removebation.sh```
+Simply run ```./removebastion.sh```
