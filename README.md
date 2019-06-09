@@ -57,9 +57,11 @@ Download Scripts,
 
 Edit these lines in ```bastion.sh```
 
+```
 export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
+```
 
 We are going to execute the prepared script to create the bastion.
 ```
