@@ -1,14 +1,14 @@
 # pipelineWorkshop
 
-These files are used as helper scripts to ease the creation of the bastion for the workshop.
-The focus of the workshop will be on AWS-EKS, but this can also be done on Azure.
+These files are used as helper scripts, to ease the creation of the bastion for the workshop.
+The focus of the workshop will be on AWS-EKS, but this can also be done in Azure.
 
-I have also provided a cheetsheet for the necessary gitHub and Dynatrace credentils we will use for the workshop.
+I have also provided a cheetsheet for the necessary gitHub and Dynatrace credentils used during the workshop.
 ```creds.json```
 
 Below are instructions for using the AWS CLI on your workstation to provison an ubuntu virtual machine on AWS (EC2). This bastion host will then be used to run the scripts to provision the cluster and application setup.
 
-# Initialize aws CLI on your workstation
+# Initialize AWS CLI on your workstation
 
 Make sure you have the AWS CLI installed on your workstation.
 See [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
@@ -97,7 +97,7 @@ ssh -i "<your pem file>.pem" ubuntu@<your host>.compute.amazonaws.com
 
 REFERENCE: [aws docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html?icmpid=docs_ec2_console)
 
-## 2. Initialize aws CLI on the bastion
+## 2. Initialize AWS CLI on the bastion
 
 Within the bastion host, run these commands to install the aws CLI 
 ```
