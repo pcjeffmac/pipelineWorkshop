@@ -67,10 +67,10 @@ Now we can execute the prepared script to create the bastion.
 ```
 ./bastion.sh
 ```
-I have simply created this script to automate the process.
+I have simply created this script to automate the process of creating the EC2 instance.
 This script will create a (Ubuntu Server 16.04 LTS (HVM), SSD Volume Type) EC2 host.
 
-You may need to get the correct AMI for your region.
+You may need to get the correct the AMI for your region.
 
 ## 1. Run Script to provision resources 
 
@@ -132,7 +132,7 @@ cd setup-infra
 
 After the completion of the workshop you can delete the EC instance.
 
-Edit these lines,
+Edit these lines in ```removebastion.sh```,
 ```
 export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
