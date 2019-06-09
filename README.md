@@ -23,7 +23,24 @@ At the prompt,
 
 See [this article](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/) for For help access keys
 
-When complete, run this command ```aws iam list-access-keys``` to see verify your configuration.
+When complete, run this command ```aws iam list-access-keys``` to verify your configuration.
+
+Output should be similar to this,
+
+```
+{
+    "AccessKeyMetadata": [
+        {
+            "UserName": "_CLI",
+            "Status": "Active",
+            "CreateDate": "2019-04-18T18:22:31Z",
+            "AccessKeyId": ""
+        }
+    ]
+}
+```
+
+Now you are ready to provision the bastion host in AWS.
 
 # Provision bastion host using CLI
 
