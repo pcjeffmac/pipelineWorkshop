@@ -1,6 +1,6 @@
 # pipelineWorkshop
 
-These files are used as helper scripts to ease the creation of the bastion.
+These files are used as helper scripts to ease the creation of the bastion for the workshop.
 
 Below are instructions for using the AWS CLI on your workstation to provison an ubuntu virtual machine on AWS (EC2). This bastion host will then be used to run the scripts to provision the cluster and application setup.
 
