@@ -1,5 +1,7 @@
 # pipelineWorkshop
 
+These files are used as helper scripts to ease the creation of the bastion.
+
 Below are instructions for using the AWS CLI on your workstation to provison an ubuntu virtual machine on AWS (EC2). This bastion host will then be used to run the scripts to provision the cluster and application setup.
 
 # Initialize aws CLI on your workstation
@@ -24,7 +26,7 @@ When complete, run this command ```aws iam list-access-keys``` to see verify you
 
 # Provision bastion host using CLI
 
-These instructions assume you have an AWS account and have the AWS CLI installed and configured locally.
+These instructions assume you have an AWS account and have the AWS CLI installed and configured locally from the above step.
 
 These commands work on Mac and Linux.  You will need to adjust for running on Windows.
 
