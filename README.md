@@ -128,7 +128,7 @@ Within the VM, run these commands to clone the setup repo.
 git clone https://github.com/dt-kube-demo/setup-infra.git
 cd setup-infra
 ```
-Now we are ready to proceed with the workshop.
+# Now we are ready to proceed with the workshop.
 
 # Delete the bastion
 
