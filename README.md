@@ -1,12 +1,13 @@
 # pipelineWorkshop
 
 These files are used as helper scripts to ease the creation of the bastion for the workshop.
+The focus of the workshop will be on AWS-EKS, but this can also be done on Azure.
 
 Below are instructions for using the AWS CLI on your workstation to provison an ubuntu virtual machine on AWS (EC2). This bastion host will then be used to run the scripts to provision the cluster and application setup.
 
 # Initialize aws CLI on your workstation
 
-will will need to make sure you have the CLI installed on your workstation.
+Make sure you have the AWS CLI installed on your workstation.
 See [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
 
 Run this command to configure the cli 
