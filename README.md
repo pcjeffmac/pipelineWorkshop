@@ -55,12 +55,18 @@ See [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-cha
 
 Download Scripts,
 
-Edit these lines in ```bastion.sh```
+Edit these lines in ```bastion.sh```, these are just place holders.
 
 ```
-export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
+```
+Your script should look something like this.
+
+```
+export CLUSTER_REGION=us-east-1
+export RESOURCE_PREFIX=jyarbrough
+export AMI_ID=ami-07b4156579ea1d7ba
 ```
 
 Now we can execute the prepared script to create the bastion.
@@ -72,7 +78,17 @@ This script will create a (Ubuntu Server 16.04 LTS (HVM), SSD Volume Type) EC2 h
 
 You may need to get the correct the AMI for your region.
 
-## 1. Run Script to provision resources 
+### Key Pair
+
+This script will also create a key pair and save the key pair to your local machine.
+You will need this .pem file to ssh into your ec2 instance.
+
+The .pem file will be named ```<example your last name>_ssh.pem```
+
+The ssh_key is the name of your key pair,
+See [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+
+## Run Script to provision resources 
 
 On your laptop, run this commands to create the bastion host with security group that allows ssh access.
 The script needs execute permissions ```chmod +x bastion.sh```
@@ -132,13 +148,13 @@ cd setup-infra
 
 # Delete the bastion
 
-After the completion of the workshop you can delete the EC instance.
+After the completion of the workshop you can delete the AWS-EC2 instance.
+This will also delete the key pair created.
 
 Edit these lines in ```removebastion.sh```,
 ```
-export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
 ```
 
-Then simply run ```./removebastion.sh``` to delete the EC2 instnace.
+Then simply run ```./removebastion.sh``` to delete the AWS-EC2 instnace.
