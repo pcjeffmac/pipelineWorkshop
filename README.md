@@ -88,7 +88,7 @@ The .pem file will be named ```<example your last name>_ssh.pem```
 The ssh_key is the name of your key pair,
 See [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
-## 1. Run Script to provision resources 
+## Run Script to provision resources 
 
 On your laptop, run this commands to create the bastion host with security group that allows ssh access.
 The script needs execute permissions ```chmod +x bastion.sh```
@@ -149,10 +149,10 @@ cd setup-infra
 # Delete the bastion
 
 After the completion of the workshop you can delete the AWS-EC2 instance.
+This will also delete the key pair created.
 
 Edit these lines in ```removebastion.sh```,
 ```
-export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
 ```
