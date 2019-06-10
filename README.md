@@ -57,18 +57,13 @@ Download Scripts,
 
 Edit these lines in ```bastion.sh```, these are just place holders.
 
-The ssh_key is the name of your key pair,
-See [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
-
 ```
-export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
 ```
 Your script should look something like this.
 
 ```
-export SSH_KEY=DevOps
 export CLUSTER_REGION=us-east-1
 export RESOURCE_PREFIX=jyarbrough
 export AMI_ID=ami-07b4156579ea1d7ba
@@ -82,6 +77,14 @@ I have simply created this script to automate the process of creating the EC2 in
 This script will create a (Ubuntu Server 16.04 LTS (HVM), SSD Volume Type) EC2 host.
 
 You may need to get the correct the AMI for your region.
+
+This script will also create a key pair and save the key pair to your local machine.
+You will need this .pem file to ssh into your ec2 instance.
+
+The .pem file will be named <example your last name>_ssh.pem
+
+The ssh_key is the name of your key pair,
+See [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ## 1. Run Script to provision resources 
 
