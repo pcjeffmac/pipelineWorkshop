@@ -78,10 +78,12 @@ This script will create a (Ubuntu Server 16.04 LTS (HVM), SSD Volume Type) EC2 h
 
 You may need to get the correct the AMI for your region.
 
+### Key Pair
+
 This script will also create a key pair and save the key pair to your local machine.
 You will need this .pem file to ssh into your ec2 instance.
 
-The .pem file will be named <example your last name>_ssh.pem
+The .pem file will be named ```<example your last name>_ssh.pem```
 
 The ssh_key is the name of your key pair,
 See [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
