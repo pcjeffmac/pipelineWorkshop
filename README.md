@@ -65,7 +65,7 @@ Your script should look something like this.
 
 ```
 export CLUSTER_REGION=us-east-1
-export RESOURCE_PREFIX=jyarbrough
+export RESOURCE_PREFIX=lastname
 export AMI_ID=ami-07b4156579ea1d7ba
 ```
 
