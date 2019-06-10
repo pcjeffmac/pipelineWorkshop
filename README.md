@@ -56,6 +56,7 @@ See [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-cha
 Download Scripts,
 
 Edit these lines in ```bastion.sh```, these are just place holders.
+
 The ssh_key is the name of your key pair,
 See [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
