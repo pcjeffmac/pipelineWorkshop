@@ -132,7 +132,7 @@ cd setup-infra
 
 # Delete the bastion
 
-After the completion of the workshop you can delete the EC instance.
+After the completion of the workshop you can delete the AWS-EC2 instance.
 
 Edit these lines in ```removebastion.sh```,
 ```
@@ -141,4 +141,4 @@ export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
 ```
 
-Then simply run ```./removebastion.sh``` to delete the EC2 instnace.
+Then simply run ```./removebastion.sh``` to delete the AWS-EC2 instnace.
