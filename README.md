@@ -55,12 +55,22 @@ See [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-cha
 
 Download Scripts,
 
-Edit these lines in ```bastion.sh```
+Edit these lines in ```bastion.sh```, these are just place holders.
+The ssh_key is the name of your key pair,
+See [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ```
 export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
+```
+Your script should look something like this.
+
+```
+export SSH_KEY=DevOps
+export CLUSTER_REGION=us-east-1
+export RESOURCE_PREFIX=jyarbrough
+export AMI_ID=ami-07b4156579ea1d7ba
 ```
 
 Now we can execute the prepared script to create the bastion.
