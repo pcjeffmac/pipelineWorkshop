@@ -1,6 +1,6 @@
 #!/bin/bash
 # adjust these variables
-export SSH_KEY=<your ssh aws key name>
+#export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
 export AMI_ID=ami-07b4156579ea1d7ba
@@ -11,6 +11,12 @@ export AWS_SECURITY_GROUP_NAME="$RESOURCE_PREFIX"-dt-kube-demo-bastion-group
 
 #create default VPC
 aws ec2 create-default-vpc
+
+#create key pair
+aws ec2 create-key-pair --key-name "$RESOURCE_PREFIX"_ssh --query 'KeyMaterial' --output text > "$RESOURCE_PREFIX"_ssh.pem
+chmod 400 "$RESOURCE_PREFIX"_ssh.pem
+
+export SSH_KEY="$RESOURCE_PREFIX"_ssh
 
 # create-security-group
 aws ec2 create-security-group \

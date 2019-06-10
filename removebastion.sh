@@ -1,6 +1,6 @@
 #!/bin/bash
 # adjust these variables
-export SSH_KEY=<your ssh aws key name>
+#export SSH_KEY=<your ssh aws key name>
 export CLUSTER_REGION=<example us-east-1>
 export RESOURCE_PREFIX=<example your last name>
 
@@ -26,3 +26,8 @@ export AWS_SECURITY_GROUP_ID=$(aws ec2 describe-security-groups \
 
 # delete the security group
 aws ec2 delete-security-group --group-id $AWS_SECURITY_GROUP_ID
+
+#delete key pair
+aws ec2 delete-key-pair --key-name "$RESOURCE_PREFIX"_ssh
+
+rm "$RESOURCE_PREFIX"_ssh.pem
