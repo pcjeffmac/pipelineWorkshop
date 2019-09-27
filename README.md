@@ -158,3 +158,5 @@ export RESOURCE_PREFIX=<example your last name>
 ```
 
 Then simply run ```./removebastion.sh``` to delete the AWS-EC2 instnace.
+
+@jyarbrough
