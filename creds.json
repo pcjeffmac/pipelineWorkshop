@@ -2,7 +2,7 @@
     "deployment": "eks",
     "jenkinsPort": "24711",
     "jenkinsUser": "admin",
-    "jenkinsPassword": "AiTx4u8VyUV8tCKk",
+    "jenkinsPassword": "xxxxxxxx",
     "dynatraceTenant": "DYNATRACE_TENANT_ID",
     "dynatraceApiToken": "DYNATRACE_APITOKEN",
     "dynatracePaaSToken": "DYNATRACE_PAASTOKEN",
